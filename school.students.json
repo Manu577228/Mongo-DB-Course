@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "64e0c0f903f868b6674c7edd"
+  },
+  "name": "spongebob",
+  "age": 30,
+  "gpa": 3.2
+},
+{
+  "_id": {
+    "$oid": "64e0c13203f868b6674c7edf"
+  },
+  "name": "Patrick",
+  "age": 38,
+  "gpa": 1.5
+},
+{
+  "_id": {
+    "$oid": "64e0c13203f868b6674c7ee0"
+  },
+  "name": "Sandy",
+  "age": 27,
+  "gpa": 4
+},
+{
+  "_id": {
+    "$oid": "64e0c13203f868b6674c7ee1"
+  },
+  "name": "Gary",
+  "age": 18,
+  "gpa": 2.5
+},
+{
+  "_id": {
+    "$oid": "64e0c6fc0256d50293ffa675"
+  },
+  "name": "Larry",
+  "age": 32,
+  "gpa": 2.8,
+  "fullTime": false,
+  "registerDate": {
+    "$date": "2023-08-19T13:43:24.650Z"
+  },
+  "graduationDate": null,
+  "courses": [
+    "Biology",
+    "Chemistry",
+    "Calculus"
+  ],
+  "address": {
+    "street": "123 Fake street",
+    "city": "Bangalore",
+    "zip": 12345
+  },
+  "place": "virginia"
+}]

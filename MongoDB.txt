@@ -1,0 +1,73 @@
+Some important Points :
+
+MY SQL and MONGO DB Terms & Concepts
+
+    MY SQL              MONGO-DB
+
+*) database <---------> database
+*) tables   <---------> collections
+*) rows     <---------> documents
+*) columns  <---------> fields
+
+Mongo DB Practice points :
+
+1) show dbs ==> ( show all DB)
+
+2) use admin ==> ( switches to admin )
+
+3) use school ==> ( creates school Database )
+
+4) use db.createCollection("students")  ==> ( creates  collection of students in school Database)
+
+5) db.dropDatabase() ==> ( drops or deletes entire school Database)  
+
+6) db.students.insertOne({name: "spongebob", age:30, gpa:3.2})  ==> ( to insert a document into collections )
+
+7) db.students.find() => ( to find data in the collection )
+
+8) db.students.insertMany([{name: "Patrick", age: 38, gpa: 1.5}, {name: "Sandy", age: 27, gpa: 4.0}, {name: "Gary", age: 18, gpa: 2.5}]) ==> ( to insert multiple documents into a collection)
+
+9) db.students.find() => ( to find data in the collection )(same to fetch for multiple documents )
+
+10) db.students.insertOne({name: "Larry", age: 32, gpa: 2.8, fullTime: false, registerDate: new Date(), graduationDate: null, courses: ["Biology", "Chemistry", "Calculus"], address: {street: "123 Fake street", city: "Bangalore", zip: 12345}})
+    ( The Datatypes used above are string, number, double, boolean, date, null, array & objects )
+
+11) db.students.find().sort({name: -1})  ==> (to sort documents we use sort() and we use 1 to sort in ascending and -1 to sort in descending order )
+
+12) db.students.find().sort({gpa: 1}).limit(2)  ==> ( only displays only first 2 documents here as we have took limit(2) ) ( we use find sort & limit in compass as well )
+
+13) db.students.find({}, { _id: false, name: true } )  ==> ( finds only name and find() is used to fetch a particular document ) ( we use filter option in mongo compass for same)
+
+14) db.students.deleteOne({name: "Sandy"}) ==> ( deletes document with name Sandy and we can use deleteMany() if we want to delete many documents )
+
+<----------------------------------------------- OPERATORS ------------------------------------------------------------->
+
+15) db.students.find({name:{$ne:"spongebob"}}) ==> ( $ne is not equal to operator and displays all documents except document with spongebob )
+
+16) db.students.find({age:{$lt: 20}})  ==> ($lt is less than operator and displays all documents in which age parameter is less than 18 )
+
+17) db.students.find({age:{$gt: 20}})  ==> ($lt is greater than operator and displays all documents in which age parameter is greater than 18 )
+
+18) db.students.find({age:{$gte: 20, $lte: 30}})  ($gte & $lte is greater than or equal to and lesser than equal to operator and displays all documents in which age parameter is greater than equal to 20 & lesser than equal to 30 )
+
+19) db.students.find({name:{$in:["spongebob", "Patrick"]}})  ==> ( $in operator here displays all docs with name spongebob & Patrick )
+
+20) db.students.find({name:{$nin:["spongebob", "Patrick"]}})  ==> ( $nin operator here doesn't display docs with name spongebob & Patrick )
+
+<------------------------------------------------------- Logical Query Operators ------------------------------------------------->
+
+*) Logical opearators return data based on expressions that evaluate to true or false
+
+21) $and
+
+22)$not
+
+23)$nor
+
+24)$or
+
+Refer link : https://www.mongodb.com/docs/manual/reference/operator/query-logical/   ==> ( reference for logical operators )
+
+<---------------------------- INDEX -------------------------------------------------------------------------------------------> 
+
+25) Index make read operations smoother but write operations like Create, Delete & Update slower. 
